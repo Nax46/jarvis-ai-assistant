@@ -9,7 +9,12 @@ class Jarvis:
         self.router = CommandRouter()
 
     def start(self):
+
         Logger.info("Jarvis Started")
 
         print(f"{self.name} Initialized Successfully")
         print(f"{self.name} is Ready")
+
+        command = input("Enter Command: ")
+
+        self.router.route(command)

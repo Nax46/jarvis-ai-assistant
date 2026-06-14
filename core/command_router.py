@@ -1,3 +1,6 @@
+from automation.app_control import AppControl
+
+
 class CommandRouter:
 
     def __init__(self):
@@ -9,6 +12,7 @@ class CommandRouter:
 
         if "chrome" in command:
             print("Chrome command detected")
+            AppControl.open_chrome()
 
         elif "youtube" in command:
             print("YouTube command detected")

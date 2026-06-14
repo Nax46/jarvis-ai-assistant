@@ -1,4 +1,5 @@
 from automation.app_control import AppControl
+from automation.browser_control import BrowserControl
 
 
 class CommandRouter:
@@ -21,6 +22,18 @@ class CommandRouter:
 
         elif "vscode" in command or "vs code" in command:
             AppControl.open_vscode()
+            
+        elif "youtube" in command:
+            BrowserControl.open_youtube()
+
+        elif "google" in command:
+            BrowserControl.open_google()
+
+        elif "github" in command:
+            BrowserControl.open_github()
+
+        elif "chatgpt" in command:
+            BrowserControl.open_chatgpt()   
 
         else:
             print("Unknown command")

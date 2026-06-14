@@ -11,11 +11,16 @@ class CommandRouter:
         command = command.lower()
 
         if "chrome" in command:
-            print("Chrome command detected")
             AppControl.open_chrome()
 
-        elif "youtube" in command:
-            print("YouTube command detected")
+        elif "notepad" in command:
+            AppControl.open_notepad()
+
+        elif "calculator" in command or "calc" in command:
+            AppControl.open_calculator()
+
+        elif "vscode" in command or "vs code" in command:
+            AppControl.open_vscode()
 
         else:
             print("Unknown command")

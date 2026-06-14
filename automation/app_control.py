@@ -1,24 +1,36 @@
 import subprocess
+from voice.speaker import Speaker
 
 
 class AppControl:
 
     @staticmethod
     def open_chrome():
-        subprocess.Popen("start chrome", shell=True)
-        print("Opening Chrome...")
+
+        Speaker.speak("Opening Chrome Sir")
+
+        subprocess.Popen(
+            "start chrome",
+            shell=True
+    )
 
     @staticmethod
     def open_notepad():
+        Speaker.speak("Opening Notepad Sir")
+
         subprocess.Popen("notepad")
-        print("Opening Notepad...")
 
     @staticmethod
     def open_calculator():
+        Speaker.speak("Opening Calculator Sir")
+
         subprocess.Popen("calc")
-        print("Opening Calculator...")
 
     @staticmethod
     def open_vscode():
-        subprocess.Popen("code", shell=True)
-        print("Opening VS Code...")
+        Speaker.speak("Opening Visual Studio Code Sir")
+
+        subprocess.Popen(
+            "code",
+            shell=True
+    )

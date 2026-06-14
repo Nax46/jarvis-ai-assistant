@@ -1,5 +1,6 @@
 from utils.logger import Logger
 from core.command_router import CommandRouter
+from voice.listener import Listener
 
 
 class Jarvis:
@@ -15,6 +16,10 @@ class Jarvis:
         print(f"{self.name} Initialized Successfully")
         print(f"{self.name} is Ready")
 
-        command = input("Enter Command: ")
+        Listener.record()
+
+        command = Listener.transcribe()
+
+        print(f"\nYou Said: {command}")
 
         self.router.route(command)

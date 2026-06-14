@@ -8,7 +8,7 @@ class Listener:
     @staticmethod
     def record():
 
-        duration = 5
+        duration = 3
         sample_rate = 16000
 
         print("Listening...")
@@ -34,12 +34,13 @@ class Listener:
     def transcribe():
 
         model = WhisperModel(
-            "base",
+            "small",
             compute_type="int8"
         )
 
         segments, info = model.transcribe(
-            "recording.wav"
+            "recording.wav",
+            language="en"
         )
 
         text = ""

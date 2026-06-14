@@ -18,7 +18,17 @@ class GeminiClient:
 
         response = self.client.models.generate_content(
             model="gemini-2.5-flash",
-            contents=prompt
+            contents=f"""
+                     You are Jarvis, a voice assistant.
+
+                     Rules:
+                     - Reply in 2-3 short sentences.
+                     - Be direct.
+                     - Speak naturally.
+                     - Avoid long paragraphs.
+
+                     User: {prompt}
+                    """
         )
 
         return response.text
